@@ -1,28 +1,15 @@
 @echo off
 
-REM Configurar o local do arquivo de log
-set LOG_FILE=%TEMP%\install-log.txt
+REM Iniciar o aplicativo com o PM2
+pm2 start api.js --name Inventory-API
 
-REM Redirecionar mensagens de erro para o arquivo de log
-2> %LOG_FILE% (
+REM Abrir o PM2 Plus no navegador padrão
+start "" "http://localhost:9615"
 
-  REM Instalar dependências do Node.js
-  npm install
+REM Salvar o estado atual do PM2
+pm2 save
 
-  REM Instalar o PM2 globalmente
-  npm install -g pm2
-
-  REM Iniciar o aplicativo com o PM2
-  pm2 start api.js --name Inventory-API
-
-  REM Salvar o estado atual do PM2
-  pm2 save
-
-  echo Dependências do projeto instaladas e projeto iniciado com PM2.
-)
-
-REM Exibir o conteúdo do arquivo de log
-type %LOG_FILE%
+echo Projeto iniciado com PM2 e PM2 Plus aberto no navegador.
 
 echo.
 echo Pressione qualquer tecla para sair.
