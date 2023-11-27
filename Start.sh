@@ -14,7 +14,3 @@ pm2 start api.js --name Inventory-API -f
 
 # Salvar o estado atual do PM2
 pm2 save
-
-
-
-pmd
