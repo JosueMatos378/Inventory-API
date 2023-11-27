@@ -1,0 +1,5 @@
+# Inventory-API
+
+Instalar o nodejs antes de tudo... Ultima versão LTS
+
+https://nodejs.org
